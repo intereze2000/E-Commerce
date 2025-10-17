@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './hooks/AuthProvider'
-import { useAuth } from './hooks/useAuth'
 import { Nav } from './nav/Nav'
 import HomePage from './pages/home/HomePage'
 import LoginPage from './pages/auth/LoginPage'
@@ -10,12 +9,11 @@ import ProductosPage from './pages/productos/ProductosPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App(){
-  const { user, logout } = useAuth()
   return (
-    <div className="app-root">
-      <Nav user={user} logout={logout} />
-      <BrowserRouter>
-        <AuthProvider>                  
+    <BrowserRouter>
+      <AuthProvider>
+        <div className="app-root">
+          <Nav />
           <main className="app-main">
             <Routes>
               <Route path="/" element={<HomePage/>} />
@@ -26,8 +24,8 @@ export default function App(){
               <Route path="*" element={<NotFoundPage/>} />
             </Routes>
           </main>
-        </AuthProvider>
-      </BrowserRouter>
-    </div>
+        </div>
+      </AuthProvider>
+    </BrowserRouter>
   )
 }

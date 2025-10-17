@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import { useAuth } from '../hooks/useAuth';
 
-export const Nav = ({ user, logout }) => {
-
+export const Nav = () => {
+  const { user, logout } = useAuth();
   return (
     <div>    
       <header className="app-header">
@@ -22,5 +23,5 @@ export const Nav = ({ user, logout }) => {
         </nav>
       </header>
     </div>
-  )
+  );
 }

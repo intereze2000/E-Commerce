@@ -18,7 +18,5 @@ useNavigate y shim para useHistory.
 2. `npm run dev`
 3. Abrir `http://localhost:5173`
 ## Notas
-- Es un proyecto educativo; la autenticación y persistencia son de ejemplo
-(localStorage).
-- Para producción, reemplazar la capa de servicios por una API real y mejorar
-la seguridad.
+- La autenticación y persistencia son de ejemplo (localStorage).
+- Luego se reemplazará la capa de servicios por una API real y mejorar la seguridad.
